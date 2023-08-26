@@ -1,0 +1,155 @@
+/* CSS reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+/* Screen Setup */
+body {
+  display: flex;
+  flex-direction: row-reverse;
+}
+header {
+  font-size: 29px;
+}
+
+/* the navbar */
+#navbar {
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  padding-top: 15px;
+  border-right: 3px solid #99a2a2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.3fr repeat(14, 0.8fr) 2fr;
+  overflow: auto;
+}
+.nav-link {
+  height: 45px;
+  text-decoration: none;
+  color: #5b5c60;
+  padding-left: 28px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Main Content */
+#main-doc {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 32px 59px 35px 35px;
+}
+.main-section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+p,
+li {
+  width: inherit;
+  text-align: left;
+  font-size: 15px;
+  line-height: 24px;
+  margin-top: 14px;
+  color: rgba(0, 0, 0, 0.744);
+}
+p {
+  margin-left: 15px;
+}
+ul {
+  margin-left: 70px;
+  width: calc(100% - 70px);
+}
+code {
+  width: inherit;
+  text-align: left;
+  white-space: pre;
+  background-color: #f7f7f7;
+  font-size: 13px;
+  color: #5b5c60;
+  line-height: 20px;
+  margin: 10px 20px;
+  word-spacing: 3px;
+}
+
+/* Media Queries */
+@media (min-width: 1000px) {
+  #main-doc {
+    width: calc(100% - 302px);
+  }
+  #navbar {
+    width: 302px;
+  }
+  .nav-link {
+    border-top: 1px solid #5b5c60;
+  }
+}
+@media (max-width: 1000px) and (min-width: 800px) {
+  * {
+    font-size: 1.6vw !important;
+  }
+  body {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #navbar {
+    all: initial;
+    display: flex;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    background-color: #eee;
+  }
+  .nav-link {
+    height: 30px;
+    font-size: x-small !important;
+  }
+  #navbar > header {
+    padding: 10px;
+    font-size: large !important;
+  }
+}
+@media (max-width: 800px) {
+  * {
+    font-size: 2vw !important;
+  }
+  body {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #navbar {
+    all: initial;
+    display: flex;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    background-color: #eee;
+    width:105vw;
+  }
+  .nav-link {
+    display: block;
+    margin:4px;
+    height: 15px;
+    font-size: xx-small !important;
+  }
+  #navbar > header {
+    font-size: large !important;
+  }
+  ul {
+    margin-left: 30px;
+    width: 100%;
+  }
+  code {
+    margin: 10px 0;
+  }
+  #main-doc {
+    padding: 10px;
+  }
+}
